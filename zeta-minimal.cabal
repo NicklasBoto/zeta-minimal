@@ -1,0 +1,79 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           zeta-minimal
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/zeta-minimal#readme>
+homepage:       https://github.com/githubuser/zeta-minimal#readme
+bug-reports:    https://github.com/githubuser/zeta-minimal/issues
+author:         Nicklas Botö
+maintainer:     boton@chalmers.se
+copyright:      2023 Nicklas Botö
+license:        GPLv3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/zeta-minimal
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_zeta_minimal
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-tools:
+      alex
+    , happy
+  build-depends:
+      array
+    , base >=4.7 && <5
+    , containers
+    , mtl
+  default-language: Haskell2010
+
+executable zeta-minimal-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_zeta_minimal
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-tools:
+      alex
+    , happy
+  build-depends:
+      array
+    , base >=4.7 && <5
+    , containers
+    , mtl
+    , zeta-minimal
+  default-language: Haskell2010
+
+test-suite zeta-minimal-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_zeta_minimal
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-tools:
+      alex
+    , happy
+  build-depends:
+      array
+    , base >=4.7 && <5
+    , containers
+    , mtl
+    , zeta-minimal
+  default-language: Haskell2010
