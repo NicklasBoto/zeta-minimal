@@ -25,7 +25,9 @@ source-repository head
 
 library
   exposed-modules:
+      Abs
       Lib
+      TypeChecker
   other-modules:
       Paths_zeta_minimal
   hs-source-dirs:
